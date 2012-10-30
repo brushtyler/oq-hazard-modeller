@@ -191,14 +191,14 @@ def kijko_nonparametric_gauss(mag, mag_sig, neq,
     """
 
     if not(max_observed):
-        # If maxmag is False then maxmag is maximum from magnitude list
+        # If max_observed is False then it is maximum from magnitude list
         del(max_observed)
         obsmax = np.max(mag)
         obsmaxsig = mag_sig[np.argmax(mag)]
 
     else:
-        obsmaxsig = obsmax[1]
-        obsmax = obsmax[0]
+        obsmaxsig = max_observed[1]
+        obsmax = max_observed[0]
 
     #neq = np.shape(mag)[0]
     # Find number_eqs largest events
